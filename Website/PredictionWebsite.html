@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Placement Prediction</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <!-- <link href="styles.css" rel="stylesheet"/>    -->
+  <!-- <link href="./static/style.css" type="text/css" rel="stylesheet" media="screen,projection"/> -->
+
+  <!-- <link ... href="{{ url_for('static', filename='style.css') }}" /> -->
+  <!-- href="{{ url_for('static', filename='mainpage.css')}}" -->
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+
+</head>
+<body background="bg3.jpg">
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Placement prediction</h1>
+      <div class="row center">
+        <h2 class="header col s12 light" >Predict the probability of placement of students
+        <br>
+        </h2>
+      </div>
+
+      <div class="row">
+    <form action='/predict' method="post" class="col s12">
+      <div class="row">
+        <div class="input-field col s4" >
+            <label for="first_name"><b>SSC Marks</b></label>
+            <br>
+          <input placeholder="Marks in percentage." name="SSC Marks" id="first_name" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="last_name"><b>HSC Marks </b></label>
+            <br>
+          <input id="last_name" name="HSC Marks" placeholder="   Marks in percentage.   "  type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="1_name"><b>CGPA</b></label>
+            <br>
+          <input id="1_name" name="CGPA" placeholder="CGPA out of 10" type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+          <label for="2_name"><b>PCOUNT</b></label>
+          <br>
+        <input id="2_name" name="PCOUNT" placeholder="No. of companies applied." type="text" class="validate">
+
+      </div>
+
+      <div class="input-field col s4">
+        <label for="3_name"><b>Apptitude Test</b></label>
+        <br>
+      <input id="3_name" name="AMCAT" placeholder="Marks scored in test." type="text" class="validate">
+
+    </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="button">Predict Probability</button>
+          
+      </div>
+    </form>
+      </div>
+
+      <br><h4 align="center"<b>{{pred}}</b></h4><br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>
+
+
+  <!--  Scripts-->
+
+  </body>
+</html>
